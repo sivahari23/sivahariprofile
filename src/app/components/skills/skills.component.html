@@ -1,0 +1,19 @@
+<section id="skills" class="skills-section">
+    <p class="section-name">03. Skills</p>
+    <div class="skills-card">
+        <header><h2>Skills &amp; Technologies</h2>
+            <p>Technologies I work with to build modern web applications and AI solutions.</p>
+        </header>
+        <div class="skills-layout">
+            <nav class="categories" aria-label="Skill categories">
+                @for (category of categories; track category) 
+                {
+                    <button [class.selected]="activeCategory()===category" (click)="selectCategory(category)">{{ category }}
+
+                    </button>
+                }</nav>
+                <div class="technology-grid" [attr.aria-label]="activeCategory() + ' technologies'">
+                    @for (technology of visibleTechnologies(); track technology.name) 
+                    {<article><b [class]="technology.style">{{ technology.icon }}</b><span>{{ technology.name }}
+                        
+                    </span></article>}</div></div></div></section>

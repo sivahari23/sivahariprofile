@@ -1,0 +1,134 @@
+<div
+  class="chat-widget"
+  [class.chat-open]="isOpen()"
+>
+
+  <!-- Chat Window -->
+  @if (isOpen()) {
+
+    <div class="chat-window">
+
+      <!-- Header -->
+      <div class="chat-header">
+
+        <div class="chat-profile">
+
+          <div class="chat-avatar">
+            S
+          </div>
+
+          <div class="chat-user-info">
+
+            <h3>Siva AI</h3>
+
+            <span>
+              <span class="status-dot"></span>
+              Online
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Messages -->
+      <div class="chat-body">
+
+        <div class="message bot-message">
+
+          <div class="message-avatar">
+            AI
+          </div>
+
+          <div class="message-content">
+            <p>
+              Hi 👋
+            </p>
+
+            <p>
+              I'm Siva's AI assistant.
+              Ask me anything about his
+              experience, skills or projects.
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- Suggestions -->
+
+        <div class="chat-suggestions">
+
+          <button type="button">
+            What are your skills?
+          </button>
+
+          <button type="button">
+            Tell me about your experience
+          </button>
+
+          <button type="button">
+            What projects have you worked on?
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Input -->
+      <div class="chat-input-area">
+
+        <input
+          type="text"
+          placeholder="Ask me something..."
+        />
+
+        <button
+          type="button"
+          class="send-button"
+          aria-label="Send message"
+        >
+          →
+        </button>
+
+      </div>
+
+    </div>
+
+  }
+
+
+  <!-- Floating Button -->
+
+  <button
+    type="button"
+    class="chat-toggle"
+    [class.active]="isOpen()"
+    (click)="toggleChat()"
+    [attr.aria-label]="
+      isOpen()
+        ? 'Close chat'
+        : 'Open chat'
+    "
+  >
+
+    @if (!isOpen()) {
+
+      <span class="chat-icon">
+        💬
+      </span>
+
+    } @else {
+
+      <span class="close-icon">
+        ×
+      </span>
+
+    }
+
+  </button>
+
+</div>
